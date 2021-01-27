@@ -24,6 +24,14 @@ steps:
       echo "$BRANCH_NAME"
       echo "***********************"
 
+# [START create serviceaccount.json]
+- id: 'serviceaccount'
+  name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args: ['run.sh']
+# [END serviceaccount]
+
+# [START tf-init]
 - id: 'tf init'
   name: 'hashicorp/terragrunt:0.26.4'
   entrypoint: 'sh'
@@ -47,13 +55,7 @@ steps:
           cd ../../
         done
       fi 
-
-# [START create serviceaccount.json]
-- id: 'serviceaccount'
-  name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: 'bash'
-  args: ['run.sh']
-# [END serviceaccount]
+# [END tf-init]
 
 # [START tf-plan]
 - id: 'tf plan'
