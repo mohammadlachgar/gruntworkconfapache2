@@ -7,10 +7,6 @@ remote_state {
   config = {
     bucket = "project_id-tfstate"
     prefix = path_relative_to_include()
-    key = "${path_relative_to_include()}/terraform.tfstate"
-    region         = "us-east-1"
-    encrypt        = true
-    dynamodb_table = "my-lock-table"
   }
 }
 
@@ -26,8 +22,8 @@ provider "google" {
 EOF
 }
 
-generate "mainx" {
-  path = "mainx.tf"
+generate "callmodules" {
+  path = "callmodules.tf"
   if_exists = "overwrite_terragrunt"
   contents = <<EOF
 
