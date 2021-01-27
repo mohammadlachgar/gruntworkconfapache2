@@ -48,7 +48,7 @@ generate "callmodules" {
 module "vpc" {
   source  = "../../modules/vpc"
   project = var.project
-  env     = var.env
+  env     = get_env("TF_VAR_env")
 }
 
 module "http_server" {

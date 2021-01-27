@@ -1,1 +1,1 @@
-env = "prod"
+export TF_VAR_env = "prod"
