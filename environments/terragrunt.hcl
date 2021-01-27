@@ -31,7 +31,7 @@ generate "callmodules" {
 module "vpc" {
   source  = "../../modules/vpc"
   project = var.project
-  env     = local.env
+  env     = var.env
 }
 
 module "http_server" {
