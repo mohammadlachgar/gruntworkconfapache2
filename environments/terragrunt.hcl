@@ -2,7 +2,7 @@
   terraform {
     extra_arguments "parent-configs" {
       arguments = [
-        "-var-file=${get_terragrunt_dir()}/${path_relative_from_include()}/common.tfvars"
+        "-var-file=${get_terragrunt_dir()}/common.tfvars"
       ]
       commands = [
         "apply",
