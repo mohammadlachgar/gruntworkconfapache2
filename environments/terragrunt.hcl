@@ -91,7 +91,7 @@ generate "versions" {
   if_exists = "overwrite_terragrunt"
   contents = <<EOF
 terraform {
-  required_version = "~> 0.14.4"
+  required_version = "~> 0.14.5"
 }
 EOF
 }
