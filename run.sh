@@ -13,7 +13,7 @@ gcloud auth activate-service-account --key-file ./creds/serviceaccount.json
 
 
 
-function docker_tag_exists() {
+function Image_exists() {
     curl --silent -f -lSL https://gcr.io/$PROJECT_ID/terragrunt:latest > /dev/null 
 
 }
