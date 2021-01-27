@@ -3,7 +3,7 @@
     extra_arguments "parent-configs" {
       arguments = [
         "-var-file=${get_terragrunt_dir()}/terraform.tfvars",
-        "-var-file=terraform.tfvars"
+        "-var-file=${find_in_parent_folders()}/terraform.tfvars"
       ]
       commands = [
         "apply",
