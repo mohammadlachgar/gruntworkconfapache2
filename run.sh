@@ -10,4 +10,4 @@ gcloud secrets versions access latest --secret=$name_secret --format='get(payloa
 
 gcloud auth activate-service-account --key-file ./creds/serviceaccount.json
 
-gcloud builds submit . --config=./build_terragrunt/terragrunt-cloudbuild.yml
+gcloud builds submit . --config=./terragrunt-cloudbuild.yml
