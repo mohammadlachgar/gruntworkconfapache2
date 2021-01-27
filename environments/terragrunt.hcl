@@ -1,3 +1,20 @@
+
+  terraform {
+    extra_arguments "parent-configs" {
+      arguments = [
+        "-var-file=${get_terragrunt_dir()}/${path_relative_from_include()}/common.tfvars"
+      ]
+      commands = [
+        "apply",
+        "plan",
+        "import",
+        "push",
+        "refresh"
+      ]
+    }
+  }
+
+
 remote_state {
   backend = "gcs"
   generate = {
