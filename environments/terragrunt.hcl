@@ -48,7 +48,7 @@ generate "callmodules" {
 module "vpc" {
   source  = "../../modules/vpc"
   project = var.project
-  env     = get_input("env")
+  env     = var.env
 }
 
 module "http_server" {
@@ -96,6 +96,7 @@ generate "variables" {
   if_exists = "overwrite_terragrunt"
   contents = <<EOF
 variable "project" {}
+variable "env" {}
 EOF
 }
 
