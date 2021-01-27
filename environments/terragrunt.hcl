@@ -26,15 +26,11 @@ provider "google" {
 EOF
 }
 
-generate "main" {
-  path = "main.tf"
+generate "mainx" {
+  path = "mainx.tf"
   if_exists = "overwrite_terragrunt"
   contents = <<EOF
 
-provider "google" {
-  credentials = file("../../creds/serviceaccount.json")
-  project = var.project
-}
 
 module "vpc" {
   source  = "../../modules/vpc"
