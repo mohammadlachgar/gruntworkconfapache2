@@ -1,1 +1,1 @@
-export TF_VAR_env "dev"
+env="devx"
